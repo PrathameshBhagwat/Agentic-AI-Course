@@ -76,7 +76,7 @@ class Student:
                 
             case _:
                 print("Invalid Choice")
-                
+               
     
 students = {}
     
