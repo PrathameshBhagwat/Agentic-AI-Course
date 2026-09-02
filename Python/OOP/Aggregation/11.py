@@ -72,7 +72,6 @@ def add_book():
     print("Book added.")
 
 while True:
-    print("\n========== Library ==========")
     print("1. Add Book")
     print("2. Display All Books")
     print("3. Search Book")
