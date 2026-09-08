@@ -1,0 +1,50 @@
+[
+    {
+        "name": "Prathamesh",
+        "roll": 7,
+        "age": 21,
+        "year": "2005",
+        "email": "demouser@gmail.com",
+        "subjects": {
+            "python": 90,
+            "java": 80,
+            "sql": 85
+        },
+        "hobbies": [
+            "cricket",
+            "movies"
+        ]
+    },
+    {
+        "name": "Sarthak",
+        "roll": 7,
+        "age": 21,
+        "year": "2005",
+        "email": "demouser@gmail.com",
+        "subjects": {
+            "python": 90,
+            "java": 80,
+            "sql": 85
+        },
+        "hobbies": [
+            "cricket",
+            "movies"
+        ]
+    },
+    {
+        "name": "Swapnil",
+        "roll": 7,
+        "age": 21,
+        "year": "2005",
+        "email": "demouser@gmail.com",
+        "subjects": {
+            "python": 90,
+            "java": 80,
+            "sql": 85
+        },
+        "hobbies": [
+            "cricket",
+            "movies"
+        ]
+    }
+]
