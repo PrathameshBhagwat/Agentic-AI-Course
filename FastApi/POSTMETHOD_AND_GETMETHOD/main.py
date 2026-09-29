@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from pydantic import BaseModel, Field, EmailStr
-from typing import Annotated, List, Dict
+from typing import Annotated, List, Dict, Optional
 from pymongo import MongoClient
 import json
 
@@ -84,3 +84,88 @@ def find_student_roll(roll: int):
         if student["roll"] == roll:
             return student
     return {"message": "Student not found"}
+
+
+# THE PUT METHOD 
+class UpdateStructure(BaseModel):
+    name: Annotated[Optional[str],Field(title="Enter your name",default=None)]
+    age: Annotated[Optional[int], Field(title="Enter your age",default=None)]
+    year: Annotated[Optional[str], Field(title="Enter your year",default=None)]
+    email: Annotated[Optional[EmailStr], Field(title="Enter your email",default=None)]
+
+@app.put("/edit/{roll}")
+def edit_student(roll: int,updateinfo : UpdateStructure):
+    with open("students.json","r") as f:
+        alldata = json.load(f)
+        
+    for i in alldata:
+        if i["roll"]==roll:
+            if updateinfo.name != None:
+                i["name"] = updateinfo.name
+
+            if updateinfo.age != None:
+                i["age"] = updateinfo.age
+    
+            if updateinfo.year != None:
+                i["year"] = updateinfo.year
+
+            if updateinfo.email != None:
+                i["email"] = updateinfo.email
+                
+
+        
+                
+    with open("students.json","w") as f2:
+        json.dump(alldata,f2)
+
+    #MongoDB implementations    
+    updated_data = {}
+    
+    if updateinfo.name != None:
+        updated_data["name"] = updateinfo.name
+    
+    if updateinfo.age != None:
+        updated_data["age"] = updateinfo.age    
+
+    if updateinfo.year != None:
+        updated_data["year"] = updateinfo.year
+        
+    if updateinfo.email != None:
+        updated_data["email"] = str(updateinfo.email)
+        
+    collection.update_one(
+        {"roll": roll},
+        {"$set": updated_data}
+    )
+
+
+    return {"message" : "The student updated."}
+
+
+# Delete method 
+@app.delete("/remove/{roll}")
+def remove_student(roll: int):
+
+
+    result = collection.delete_one({"roll": roll})
+
+
+    with open("students.json", "r") as file:
+        information = json.load(file)
+
+    for i in information:
+        if i["roll"] == roll:
+            information.remove(i)
+            break
+
+    with open("students.json", "w") as file2:
+        json.dump(information, file2, indent=4)
+
+
+
+    if result.deleted_count == 0:
+        return {"message": "Student not found"}
+
+    return {"message": "Student deleted successfully"}      
+    
+    

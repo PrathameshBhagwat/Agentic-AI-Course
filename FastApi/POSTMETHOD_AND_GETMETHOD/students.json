@@ -1,26 +1,10 @@
 [
     {
-        "name": "Prathamesh",
-        "roll": 7,
+        "name": "Prathamesh Bhagwat",
+        "roll": 1,
         "age": 21,
         "year": "2005",
-        "email": "demouser@gmail.com",
-        "subjects": {
-            "python": 90,
-            "java": 80,
-            "sql": 85
-        },
-        "hobbies": [
-            "cricket",
-            "movies"
-        ]
-    },
-    {
-        "name": "Sarthak",
-        "roll": 7,
-        "age": 21,
-        "year": "2005",
-        "email": "demouser@gmail.com",
+        "email": "bhagvat@gmail.com",
         "subjects": {
             "python": 90,
             "java": 80,
@@ -33,10 +17,26 @@
     },
     {
         "name": "Swapnil",
-        "roll": 7,
+        "roll": 2,
         "age": 21,
-        "year": "2005",
-        "email": "demouser@gmail.com",
+        "year": "2003",
+        "email": "swapy@gmail.com",
+        "subjects": {
+            "python": 90,
+            "java": 80,
+            "sql": 85
+        },
+        "hobbies": [
+            "cricket",
+            "movies"
+        ]
+    },
+    {
+        "name": "Omkar",
+        "roll": 3,
+        "age": 21,
+        "year": "2003",
+        "email": "omkar@gmail.com",
         "subjects": {
             "python": 90,
             "java": 80,

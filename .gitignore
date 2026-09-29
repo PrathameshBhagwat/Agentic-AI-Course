@@ -1,0 +1,26 @@
+# Environment variables and credentials
+.env
+.env.*
+!.env.example
+
+# Python virtual environments
+venv/
+.venv/
+env/
+ENV/
+*/venv/
+*/.venv/
+
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+*$py.class
+*/__pycache__/
+
+# IDE / Editor folders
+.vscode/
+.idea/
+
+# OS generated files
+.DS_Store
+Thumbs.db
