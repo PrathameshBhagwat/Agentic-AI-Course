@@ -5,3 +5,4 @@ langchain-groq
 langchain-huggingface
 pydantic
 python-dotenv
+
