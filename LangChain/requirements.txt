@@ -1,8 +1,12 @@
 langchain
+langchain-community
 langchain-core
 langchain-google-genai
 langchain-groq
 langchain-huggingface
+langchain-text-splitters
 pydantic
 python-dotenv
+pypdf
+beautifulsoup4
 
